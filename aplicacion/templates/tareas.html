@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Tareas</h1>
+
+{% for tarea in tareas %}
+
+<div>
+    <h1>  {% if tarea.done == False %} 🕑 {% else %} ✅ {% endif %} {{tarea.titulo}}</h1>
+  
+    {% if tarea.done == False %}
+    <p>Tarea pendiente</p>
+    {% else %}
+    <p>Tarea realizada</p>
+    {% endif %}
+    
+
+    <p>{{tarea.descripcion}}</p>
+    <p>{{tarea.proyecto}}</p>
+    <button>Borrar</button>
+    <button>✅</button>
+
+</div>
+
+{% endfor %}
+
+{% endblock %}
