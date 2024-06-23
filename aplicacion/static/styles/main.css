@@ -1,0 +1,46 @@
+body{
+    background-color: black;
+    color: blanchedalmond;
+}
+
+.navbar{
+    background-color: blueviolet;
+    padding: 5px 0;
+}
+
+.navbar ul{
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar ul li{
+    list-style: none;
+}
+
+.navbar ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+.navbar ul li a:hover{
+    color:bisque;
+}
+
+.container{
+    max-width: 700px;
+    margin: auto;
+    padding: 20px 0;
+}
+
+.card{
+    background-color: yellowgreen;
+    padding: 1em;
+    margin: 1em;
+}
+
+.input{
+    display: block;
+    background-color: wheat;
+    padding: 10px;
+    text-align: center;
+}

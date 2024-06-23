@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Detalle del proyecto</h1>
+<p>{{proyecto}}</p>
+
+{% for tarea in tareas %}
+
+    <p class="card">{{tarea.titulo}}</p>
+
+{% endfor %}
+
+
+{% endblock %}

@@ -7,8 +7,9 @@
 
 {% for proyecto in proyecto %}
 
-<h1>{{proyecto.name}}</h1>
-
+<a href="{% url 'detalleproyecto' proyecto.id %}">
+    <h1 class="card">{{proyecto.name}}</h1>
+</a>
 
 {% endfor %}
 <p>{{proyecto}}</p>

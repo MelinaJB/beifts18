@@ -55,7 +55,7 @@ class crearTarea(View):
             proyecto_id = 2
             Tareas.objects.create(
                 titulo=titulo, descripcion=descripcion, proyecto_id=proyecto_id)
-            return redirect('/tareas')
+            return redirect('tareas')
         return render(request, 'crear_tarea.html', {
             'form': form
         })
@@ -72,7 +72,17 @@ class crearProyecto(View):
         if form.is_valid():
             name = form.cleaned_data['name']
             Proyecto.objects.create(name=name)
-            return redirect('/proyecto')
+            return redirect('proyecto')
         return render(request, 'crear_proyecto.html', {
             'form': form
+        })
+
+class detalleProyecto(View):
+    def get(self, request, id):
+        #proyecto = Proyecto.objects.get(id=id)
+        proyecto = get_object_or_404(Proyecto, id=id)
+        tareas = Tareas.objects.filter(proyecto_id=id)
+        return render(request, 'detalleproyecto.html', {
+            'proyecto': proyecto,
+            'tareas': tareas
         })
